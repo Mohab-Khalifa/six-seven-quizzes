@@ -1,6 +1,6 @@
 async function loadResults() {
   try {
-    const res = await fetch("http://localhost:3000/api/results"); // your backend
+    const res = await fetch("http://localhost:3000/api/results"); 
     const data = await res.json();
 
     const titleEl = document.getElementById("result-title");
@@ -39,15 +39,4 @@ async function loadResults() {
       "Failed to load results. Please try again.";
   }
 }
-
-// Button actions
-function playAgain() {
-  window.location.href = "./gameselection.html";
-}
-
-function goHome() {
-  window.location.href = "./HomePage.html";
-}
-
-// Load when page opens
 loadResults();
