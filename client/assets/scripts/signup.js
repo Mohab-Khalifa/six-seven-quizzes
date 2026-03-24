@@ -1,10 +1,11 @@
 document.getElementById("form-box").addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log(e.target)
+  console.log(e.target.username.value);
   const form = new FormData(e.target);
 
+  console.log(form.get("username"));
+
   const options = {
-    host: "localhost:3012",
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -16,7 +17,7 @@ document.getElementById("form-box").addEventListener("submit", async (e) => {
     }),
   };
 
-  const response = await fetch("/register", options);
+  const response = await fetch("http://localhost:3012/register", options);
   const data = await response.json();
 
   if (response.status == 201) {
