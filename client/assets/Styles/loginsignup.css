@@ -1,0 +1,114 @@
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* BLURRED IMAGE */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('/client/assets/images/img2.png') no-repeat center center/cover;
+  filter: blur(6px);
+  z-index: -2;
+}
+
+/* DARK OVERLAY */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* ===== PAGE LAYOUT ===== */
+
+.form-container {
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+}
+
+/* TITLE */
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* SWITCH TEXT */
+.switch-text {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.switch-text a {
+  color: #c084fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORM BOX ===== */
+
+.form-box {
+  background: rgba(200, 200, 255, 0.85);
+  width: 400px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  color: black;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  font-size: 18px;
+}
+}
+
+/* LABELS */
+.form-box label {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* INPUTS */
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 18px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* ===== BUTTON ===== */
+
+.main-btn {
+  background: linear-gradient(to right, #d946ef, #a855f7);
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 500px) {
+  .form-box {
+    width: 90%;
+  }
+}
