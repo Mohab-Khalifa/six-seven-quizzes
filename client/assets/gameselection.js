@@ -1,128 +1,157 @@
+// list of the questions
 const questions = [
     {
         question: "question 1 (easy)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
         hint:"the hint for question 1"
     },
     {
         question: "question 2 (easy)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 2"
     },
     {
         question: "question 3 (easy)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 3"
     },
     {
         question: "question 4 (medium)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 4"
     },
     {
         question: "question 5(medium)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 5"
     },
     {
         question: "question 6 (medium)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 6"
     },
     {
         question: "question 7 (hard)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 7"
     },
     {
         question: "question 8 (hard)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 8"
     },
     {
         question: "question 9 (hard)?",
-        answers: ["item 1", "item 2", "item 3", "item 4"],
+        options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"the hint for question 9"
     },
 ];
 
 // counter from questions, strikes, score
 let currentQuestion = 0; 
 let strikes = 0;
-let score = 0;
+let myScore = 0;
 
-
-// START GAME (flip card)
-function startGame() {
-    document
-        .getElementById("cardInner")
-        .classList.add("flip");
-
+// start the game
+function startGame () {
+    const card = document.getElementById("cardInner").classList.add("flip");
     loadQuestion();
 }
-
 
 // LOAD QUESTION
+// display  the test on the screen
 function loadQuestion() {
-
+    strikes = 0 // reset strikes for new question
     const q = questions[currentQuestion];
-
-    // show question
     document.getElementById("question").textContent = q.question;
 
-    // clear old answers
-    const answerDiv = document.getElementById("answer");
-    answerDiv.innerHTML = "";
+    // clear old buttons
+    let area = document.getElementById("answer");
+    area.innerHTML = "";
 
     // create buttons
-    q.answers.forEach((ans,index) => {
-        const btn = document.createElement("button");
-        btn.textContent = ans;
+    for(let i= 0; i < q.options.length; i++) {
+        let btn = document.createElement("button")
+        btn.textContent = q.options [i];
         btn.className = "btn btn-outline-primary m-1";
-        answerDiv.appendChild(btn);
-    });
-}
 
-
-// NEXT QUESTION
-function nextQuestion() {
-    // Logic: Redirect if 2 strikes reached OR if finished 9 questions
-    if (strikes >= 2 || currentQuestion >= questions.length - 1) {
-        // Save score  so result.html can read it
-
-        // redirected to the result page
-        window.location.href = "results.html";
-        return;
+    // when clicked, check if the index is the correct one
+    btn.onclick = function () {
+        checkAnswer(i);
+    }
+    area.appendChild(btn);
     }
 
-    currentQuestion++;
+    };
+
+//strikes logic
+function checkAnswer(userChoice) {
+    const q = questions[currentQuestion];
+    //look the buttons so they can't get more points
+    const buttons = document.querySelectorAll("#answer button")
+    
+
+    if (userChoice === q.correct) {
+        for (let i=0; i<buttons.length; i++) {
+        buttons[i].disabled = true;}
+        alert("Correct! Vault security bypassed! Click 'Next' to try the next security layer")
+        myScore = myScore + 1;
+
+    }else {
+        //wronf answer: add strike
+        strikes= strikes + 1;
+
+        if (strikes >=2) {
+            alert("Busted! The correct answer was: " + q.options[q.correct] + "Moving to results ...")
+            goToResults(); //game stops here
+            return;
+
+        } else{
+        alert ("Wrong! Strike 1: Try again");
+        }
+    }
+}
+
+// Ending the game
+function nextQuestion() {
+    // If they have 2 strikes, go to results page 
+    if (strikes >= 2) {
+        // redirected to the result page
+        goToResults();
+        return
+    };
+
+//Move to the next question
+currentQuestion = currentQuestion + 1;
+
+//If we passed the question 9, go to result
+if (currentQuestion > 8) {
+    goToResults();
+}else {
     loadQuestion();
 }
-
-// function to check the anwers in the index from the const q
-function checkAnswer(Index) {
-    const q = questions[currentQuestion];
-
-    if (Index === q.correct) {
-        score++;
-    } else {
-        strikes
-    }
-
 }
+
+// sending data to the next page
+function goToResults () {
+    localStorage.setItem("finalScore", myScore)
+    window.location.href = "results.html";
+}
+
 
 // function to display the hint
 function showHint() {
-
+    const q = questions[currentQuestion];
+    alert("Hint: " + q.hint)
 }
 
 //resets the selection for the current question
