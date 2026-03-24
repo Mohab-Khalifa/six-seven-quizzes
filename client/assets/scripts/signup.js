@@ -1,9 +1,10 @@
 document.getElementById("form-box").addEventListener("submit", async (e) => {
   e.preventDefault();
-
+  console.log(e.target)
   const form = new FormData(e.target);
 
   const options = {
+    host: "localhost:3012",
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -15,11 +16,11 @@ document.getElementById("form-box").addEventListener("submit", async (e) => {
     }),
   };
 
-  const response = await fetch("http://localhost:3000/users/register", options);
+  const response = await fetch("/register", options);
   const data = await response.json();
 
   if (response.status == 201) {
-    alert("Registered!");
+    alert("Registered Sucessfully!");
     window.location.assign("login.html");
   } else {
     alert(data.error);
