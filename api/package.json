@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nodemon -L index.js",
     "start": "node index.js",
-    "setup-db": "node ./database/setup.js"
+    "setup-db": "node ./database/setup.js",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
