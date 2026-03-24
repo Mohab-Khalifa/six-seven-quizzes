@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Bank Heist - Game Rules</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/client/assets/Styles/rulestyle.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div>#Game Rules</div>
+    <div class="center">Brain Bank Heist</div>
+    <div id="welcomeText">Welcome</div>
+</div>
+
+<!-- Main Section -->
+<div class="hero">
+    <div class="overlay">
+        <h1>How to Play the Game</h1>
+
+        <p>
+            <strong>Brain Bank Heist</strong> is an educational game where you play as a thief trying to crack a vault.
+            Answer multiple-choice questions across three levels: Easy, Medium, and Hard.
+        </p>
+
+        <p>
+            <strong>Game Levels:</strong><br>
+            Layer 1: Easy Questions<br>
+            Layer 2: Medium Questions<br>
+            Layer 3: Hard Questions
+        </p>
+
+        <p>
+            <strong>Two-Strike Rule:</strong><br>
+            1st wrong answer: Retry<br>
+            2nd wrong answer: Game Over
+        </p>
+
+        <p>
+            <strong>Winning:</strong><br>
+            Answer all questions correctly to crack the vault.
+        </p>
+
+        <p>
+            <strong>After Game:</strong><br>
+            View score, play again, or return home.
+        </p>
+
+        <button class="btn" onclick="goToGame()">Back to the Game</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    copyright @2026 Brain Bank Heist | Six-Seven Quizzes |
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Show username
+    const username = localStorage.getItem("username");
+
+    if (username) {
+        document.getElementById("welcomeText").textContent = "Welcome, " + username;
+    } else {
+        document.getElementById("welcomeText").textContent = "Welcome, Guest";
+    }
+
+    function goToGame() {
+        window.location.href = "gameselection.html"; 
+    }
+</script>
+
+</body>
+</html>
