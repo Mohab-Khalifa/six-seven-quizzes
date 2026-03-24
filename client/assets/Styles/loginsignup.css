@@ -56,7 +56,7 @@ h1 {
 
 /* ===== FORM BOX ===== */
 
-.form-box {
+#form-box {
   background: rgba(200, 200, 255, 0.85);
   width: 400px;
   margin: auto;
