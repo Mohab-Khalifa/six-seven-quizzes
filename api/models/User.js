@@ -34,7 +34,7 @@ class User {
             throw new Error("Unable to create user.");
         }
 
-        return new User(response.row[0]);
+        return new User(response.rows[0]);
     }
 
 }
