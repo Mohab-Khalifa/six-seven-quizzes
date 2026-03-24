@@ -17,7 +17,7 @@ document.getElementById("form-box").addEventListener("submit", async (e) => {
     }),
   };
 
-  const response = await fetch("http://localhost:3012/register", options);
+  const response = await fetch("http://localhost:3015/register", options);
   const data = await response.json();
 
   if (response.status == 201) {
