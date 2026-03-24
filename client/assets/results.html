@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Results</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="game-container">
+    <h1>Brain Bank Heist</h1>
+    <button onclick="showWin()">Simulate Win</button>
+    <button onclick="showLose()">Simulate Lose</button>
+  </div>
+
+  <!-- Result Modal -->
+  <div id="resultModal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="resultTitle"></h2>
+      <p id="resultScore"></p>
+      <p id="resultMessage"></p>
+
+      <div class="buttons">
+        <button onclick="playAgain()">Play Again</button>
+        <button onclick="goHome()">Return to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
