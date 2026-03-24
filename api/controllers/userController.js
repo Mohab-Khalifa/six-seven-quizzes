@@ -12,7 +12,7 @@ async function register(req, res) {
 
         console.log(data);
 
-        const result = await User.create(data);
+        const result = await User.createUser(data);
 
         res.status(201).json({
             id: result.id,
