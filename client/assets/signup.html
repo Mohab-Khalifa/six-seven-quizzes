@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <script src="./scripts/signup.js" defer></script>
   </head>
   <body>
     <div class="form-container">
@@ -17,15 +18,16 @@
         Already a member?
         <a href="login.html">Log in</a>
       </p>
-      <form class="form-box">
+      <form id="form-box">
         <i class="fa-regular fa-circle-user"></i>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" />
         <i class="fa-solid fa-lock"></i>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" />
-
-        <button class="main-btn">Register</button>
+        
+        <input type="submit"  class="main-btn" value="Register">
+       
       </form>
     </div>
   </body>
