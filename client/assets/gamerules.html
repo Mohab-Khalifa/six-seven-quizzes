@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brain Bank Heist - Game Rules</title>
-    <link rel="stylesheet" href="/client/assets/Styles/rulestyle.css">
+    <link rel="stylesheet" href="./Styles/rulestyle.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
 <div class="navbar">
     <div>#Game Rules</div>
     <div class="center">Brain Bank Heist</div>
-    <div id="welcomeText">Welcome</div>
+    <div id="welcomeText">Welcome to Six-Seven Quizzes</div>
 </div>
 
 <!-- Main Section -->
@@ -57,22 +57,5 @@
 <div class="footer">
     copyright @2026 Brain Bank Heist | Six-Seven Quizzes |
 </div>
-
-<!-- JavaScript -->
-<script>
-    // Show username
-    const username = localStorage.getItem("username");
-
-    if (username) {
-        document.getElementById("welcomeText").textContent = "Welcome, " + username;
-    } else {
-        document.getElementById("welcomeText").textContent = "Welcome, Guest";
-    }
-
-    function goToGame() {
-        window.location.href = "gameselection.html"; 
-    }
-</script>
-
 </body>
 </html>
