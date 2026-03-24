@@ -111,7 +111,7 @@ function checkAnswer(userChoice) {
         strikes= strikes + 1;
 
         if (strikes >=2) {
-            alert("Busted! The correct answer was: " + q.options[q.correct] + "Moving to results ...")
+            alert("Busted! The correct answer was: " + q.options[q.correct] + " Moving to results ...")
             goToResults(); //game stops here
             return;
 
