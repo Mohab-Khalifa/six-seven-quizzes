@@ -64,14 +64,16 @@ async function login(req, res) {
 }
 
 async function updateScore(req, res) {
-  const data = req.body;
-  const username = req.params.username;
+  const { score } = req.body;
 
+  if (score === undefined) {
+    return res.status(400).json({ err: "Score is required" });
+  }
   try {
-    const user = await User.findByUsername(username);
-
-    data["user_id"] = user.id;
-    const response = await User.insertScore(data);
+    const response = await User.insertScore({
+      user_id: req.user.id,
+      score: score,
+    });
 
     res.status(200).json({ response });
   } catch (err) {
