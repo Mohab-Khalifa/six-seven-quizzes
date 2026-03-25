@@ -23,20 +23,26 @@ body {
 .win-bg {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
               url('/client/assets/images/win.png') center/cover no-repeat;
+   
 }
 
 .lose-bg {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
               url('/client/assets/images/lose.png') center/cover no-repeat;
+ 
 }
 /* Result Card */
 .card {
-  background: rgba(230, 224, 224, 0.85);
+  background: rgba(255, 255, 255, 0.65); 
   padding: 40px;
-  width: 500px;
+  width: 400px;
   text-align: center;
-  border-radius: 10px;
-  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  backdrop-filter: blur(-5px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #000;
 }
 
 /* Title */
