@@ -13,7 +13,7 @@ const questions = [
         hint:"the hint for question 2"
     },
     {
-        question: "question 3 (easy)?",
+        question: "question 3 (medium)?",
         options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
         hint:"the hint for question 3"
@@ -25,34 +25,10 @@ const questions = [
         hint:"the hint for question 4"
     },
     {
-        question: "question 5(medium)?",
+        question: "question 5(hard)?",
         options: ["item 1", "item 2", "item 3", "item 4"],
         correct:2,
         hint:"the hint for question 5"
-    },
-    {
-        question: "question 6 (medium)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 6"
-    },
-    {
-        question: "question 7 (hard)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 7"
-    },
-    {
-        question: "question 8 (hard)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 8"
-    },
-    {
-        question: "question 9 (hard)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 9"
     },
 ];
 
@@ -106,6 +82,13 @@ function checkAnswer(userChoice) {
         alert("Correct! Vault security bypassed! Click 'Next' to try the next security layer")
         myScore = myScore + 1;
             console.log(myScore)
+
+    if(currentQuestion === 5) {
+        alert("Congrats! You cracked the vault! The heist is a success")
+        goToResults();
+        return;
+    }
+    
     }else {
         //wronf answer: add strike
         strikes= strikes + 1;
