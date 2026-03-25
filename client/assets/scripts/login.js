@@ -15,7 +15,10 @@ document.getElementById("form-box").addEventListener("submit", async (e) => {
     }),
   };
 
-  const response = await fetch("http://localhost:3015/login", options);
+  const response = await fetch(
+    "https://six-seven-quizzes.onrender.com/login",
+    options,
+  );
   const data = await response.json();
 
   if (response.status == 200) {
