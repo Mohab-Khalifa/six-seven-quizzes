@@ -105,7 +105,7 @@ function checkAnswer(userChoice) {
         buttons[i].disabled = true;}
         alert("Correct! Vault security bypassed! Click 'Next' to try the next security layer")
         myScore = myScore + 1;
-
+            console.log(myScore)
     }else {
         //wronf answer: add strike
         strikes= strikes + 1;

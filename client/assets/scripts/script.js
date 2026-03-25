@@ -1,8 +1,16 @@
 async function loadResults() {
+  const token = localStorage.getItem("token")
+  const finalScore = localStorage.getItem("finalScore")
   try {
-    const res = await fetch("https://six-seven-quizzes.onrender.com/results"); 
+    const options = {method:"POST", headers: {
+    "Content-Type": "application/json",
+    "Authorization": token
+  },
+  body: JSON.stringify({ score: finalScore })
+}
+    const res = await fetch("https://six-seven-quizzes.onrender.com/score",options); 
     const data = await res.json();
-
+    console.log(token,finalScore)
     const titleEl = document.getElementById("result-title");
     const messageEl = document.getElementById("result-message");
     const scoreEl = document.getElementById("result-score");
