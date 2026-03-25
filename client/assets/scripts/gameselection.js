@@ -36,6 +36,7 @@ const questions = [
 let currentQuestion = 0; 
 let strikes = 0;
 let myScore = 0;
+let answer = false; //track if  user has answered the current qn
 
 // start the game
 function startGame () {
@@ -47,6 +48,7 @@ function startGame () {
 // display  the test on the screen
 function loadQuestion() {
     strikes = 0 // reset strikes for new question
+    answered = false;
     const q = questions[currentQuestion];
     document.getElementById("question").textContent = q.question;
 
@@ -71,6 +73,7 @@ function loadQuestion() {
 
 //strikes logic
 function checkAnswer(userChoice) {
+    answered = true; //user clicked answer
     const q = questions[currentQuestion];
     //look the buttons so they can't get more points
     const buttons = document.querySelectorAll("#answer button")
@@ -106,6 +109,10 @@ function checkAnswer(userChoice) {
 
 // Ending the game
 function nextQuestion() {
+    if(!answered){
+        alert("you must select an answer before moving on!");
+        return;
+    }
     // If they have 2 strikes, go to results page 
     if (strikes >= 2) {
         // redirected to the result page
