@@ -1,34 +1,34 @@
 // list of the questions
 const questions = [
     {
-        question: "question 1 (easy)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
+        question: "The great wall is located in which country?",
+        options: ["Japan", "Korea", "China", "Russia"],
         correct:2,
-        hint:"the hint for question 1"
+        hint:"It was build to defend aganist northern invasions of Asia"
     },
     {
-        question: "question 2 (easy)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 2"
+        question: "Who discovered America in 1492?",
+        options: ["Vasco da Gama", "Christopher Columbus", "Ferdinand Magellan", "Marco Polo"],
+        correct:1,
+        hint:"This explorer sailed west across the Atlantic Ocean from Spain."
     },
     {
-        question: "question 3 (medium)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 3"
+        question: "On which date did Ukraine declare independence from the Soviet Union?",
+        options: ["July 16, 1990", "December 25, 1991", "January 1, 1992", "August 24, 1991"],
+        correct:3,
+        hint:"Think late August 1991, right after the failed coup in Moscow."
     },
     {
-        question: "question 4 (medium)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 4"
+        question: "Who led the Indian independence movement using nonviolent protest?",
+        options: ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Bhagat Singh"],
+        correct:1,
+        hint:"He is known for peaceful protests and civil disobedience."
     },
     {
-        question: "question 5(hard)?",
-        options: ["item 1", "item 2", "item 3", "item 4"],
-        correct:2,
-        hint:"the hint for question 5"
+        question: "Which treaty ended World War I?",
+        options: ["Treaty of Versailles", "Treaty of Paris", "Treaty of Tordesillas", "Treaty of Ghent"],
+        correct:0,
+        hint:"It’s named after a famous French palace."
     },
 ];
 
