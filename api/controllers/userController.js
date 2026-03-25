@@ -36,7 +36,7 @@ async function login(req, res) {
     const match = await bcrypt.compare(data.password, user.password);
 
     if (match) {
-      const payload = { username: user.username };
+      const payload = { id: user.id, username: user.username };
 
       const sendToken = (err, token) => {
         if (err) {
@@ -77,7 +77,7 @@ async function updateScore(req, res) {
 
     res.status(200).json({ response });
   } catch (err) {
-    res.status(404).json({ err: err.message });
+    res.status(404).json({ err: err });
   }
 }
 

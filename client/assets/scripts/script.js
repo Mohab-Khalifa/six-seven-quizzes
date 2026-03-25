@@ -1,16 +1,24 @@
 async function loadResults() {
-  const token = localStorage.getItem("token")
-  const finalScore = localStorage.getItem("finalScore")
+  const token = localStorage.getItem("token");
+  const finalScore = localStorage.getItem("finalScore");
   try {
-    const options = {method:"POST", headers: {
-    "Content-Type": "application/json",
-    "Authorization": token
-  },
-  body: JSON.stringify({ score: finalScore })
-}
-    const res = await fetch("https://six-seven-quizzes.onrender.com/score",options); 
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({ score: Number(finalScore) }),
+    };
+    const res = await fetch(
+      "https://six-seven-quizzes.onrender.com/score",
+      options,
+    );
     const data = await res.json();
-    console.log(token,finalScore)
+    console.log("Token:", token);
+    console.log("Final score:", finalScore);
+    console.log("Status Code:", res.status);
+    console.log("Overall response:", data);
     const titleEl = document.getElementById("result-title");
     const messageEl = document.getElementById("result-message");
     const scoreEl = document.getElementById("result-score");
@@ -25,7 +33,6 @@ async function loadResults() {
         And cracked the Brain Bank💰
       `;
       mainEl.classList.add("win-bg");
-
     } else {
       titleEl.textContent = "Game Over";
       messageEl.innerHTML = `
@@ -36,9 +43,8 @@ async function loadResults() {
       mainEl.classList.add("lose-bg");
     }
 
-    // Score 
+    // Score
     scoreEl.textContent = `${data.score}/${data.total}`;
-
   } catch (err) {
     console.error("Error fetching results:", err);
 
@@ -48,6 +54,3 @@ async function loadResults() {
   }
 }
 loadResults();
-
-
-
