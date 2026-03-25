@@ -83,7 +83,7 @@ function checkAnswer(userChoice) {
         myScore = myScore + 1;
             console.log(myScore)
 
-    if(currentQuestion === 5) {
+    if(currentQuestion === 4) {
         alert("Congrats! You cracked the vault! The heist is a success")
         goToResults();
         return;
