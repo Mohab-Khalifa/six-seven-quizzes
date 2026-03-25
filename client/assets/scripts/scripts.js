@@ -1,6 +1,6 @@
 async function loadResults() {
   try {
-    const res = await fetch("http://localhost:3000/api/results"); 
+    const res = await fetch("https://six-seven-quizzes.onrender.com/results"); 
     const data = await res.json();
 
     const titleEl = document.getElementById("result-title");
