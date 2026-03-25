@@ -35,7 +35,7 @@ class User {
 
   static async insertScore({ user_id, score }) {
     const response = await db.query(
-      `INSERT INTO result (user_id, score) VALUES ($1, $2) RETURNING *`,
+      `INSERT INTO result (user_id, score) VALUES ($1, $2) RETURNING *;`,
       [user_id, score],
     );
 
