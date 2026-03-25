@@ -142,3 +142,14 @@ function retryQuestion() {
 
 loadQuestion();    
 }
+
+module.exports = {
+  startGame,
+  loadQuestion,
+  checkAnswer,
+  nextQuestion,
+  goToResults,
+  showHint,
+  retryQuestion,
+  questions
+};
