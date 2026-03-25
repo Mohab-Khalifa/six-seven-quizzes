@@ -1,0 +1,94 @@
+.heist-theme, #heist-layout {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#heist-layout {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#heist-layout main {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: url('/client/assets/images/heist.jpg') no-repeat center center/cover;
+}
+
+#heist-layout .navbar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d3d3d3;
+    padding: 0 20px;
+    font-weight: bold;
+    color: #000000 !important;
+}
+
+#heist-layout .navbar a {
+    color: #000000 !important;
+}
+
+.heist-theme #heist-layout .btn-primary {
+    background-color: black !important;
+    border: none !important;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px);     
+    perspective: 1000px;
+    position: relative;
+    border-radius: 15px;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.card-inner{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-back{
+    transform: rotateY(180deg);
+}
+
+#heist-layout footer {
+    width: 100%;
+    padding: 15px;
+    background-color: #d3d3d3;
+    text-align: center;
+    color: #000000 !important;
+}
+
