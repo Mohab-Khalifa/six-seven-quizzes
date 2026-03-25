@@ -12,18 +12,18 @@ async function loadResults() {
     if (data.result === "win") {
       titleEl.textContent = "YOU WON!";
       messageEl.innerHTML = `
-        You bypassed every firewall.<br>
-        Outsmarted every challenge.<br>
-        And cracked the Brain Bank.
+        🎉You bypassed every firewall.<br>
+        Outsmarted every challenge💻<br>
+        And cracked the Brain Bank💰
       `;
       mainEl.classList.add("win-bg");
 
     } else {
       titleEl.textContent = "Game Over";
       messageEl.innerHTML = `
-        Uh-oh!<br>
-        The police found you before you escaped.<br>
-        Try again and make a smarter plan!
+        🚨Uh-oh!<br>
+        👮The police found you before you escaped.<br>
+         Try again and make a smarter plan!
       `;
       mainEl.classList.add("lose-bg");
     }
@@ -40,3 +40,6 @@ async function loadResults() {
   }
 }
 loadResults();
+
+
+
