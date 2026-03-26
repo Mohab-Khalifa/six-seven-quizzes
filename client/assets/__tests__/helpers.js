@@ -1,5 +1,14 @@
-const path = require('path');
-const jsdom = require('jsdom');
+//The Path module provides a way of working with directories and file paths.
+const path = require("path");
+const jsdom = require("jsdom");
+// Source - https://stackoverflow.com/a/68468204
+// Posted by leonheess, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-03-26, License - CC BY-SA 4.0
+
+const { TextEncoder, TextDecoder } = require("util");
+
+Object.assign(global, { TextDecoder, TextEncoder });
+
 //To use jsdom, you will primarily use the JSDOM constructor, which is a named export of the jsdom main module.
 const { JSDOM } = jsdom;
 
@@ -10,18 +19,18 @@ const renderDOM = async (filename) => {
   // To enable executing scripts inside the page, you can use the runScripts: "dangerously" option
   //If you want to execute external scripts, included via <script src="">, you'll also need to ensure that they load them. To do this, add the option resources: "usable" as described below. (You'll likely also want to set the url option, for the reasons discussed there.)
   const dom = await JSDOM.fromFile(filePath, {
-    runScripts: 'dangerously',
-    resources: 'usable'
+    runScripts: "dangerously",
+    resources: "usable",
   });
 
   return new Promise((resolve, _) => {
     // When using the JSDOM constructor, you will get back a JSDOM object, which has a number of useful properties, notably window and document to use below
-    // We're basically are saying: 
+    // We're basically are saying:
     // We wait for the DOM content to have loaded and then we can resolve the promise
-    dom.window.document.addEventListener('DOMContentLoaded', () => {
+    dom.window.document.addEventListener("DOMContentLoaded", () => {
       resolve(dom);
     });
   });
 };
 
-module.exports = { renderDOM }
+module.exports = { renderDOM };
