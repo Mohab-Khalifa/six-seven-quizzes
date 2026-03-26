@@ -7,7 +7,7 @@ Our project has three main parts that work together to make the game fun and fas
 - The Backend: Node.js and Express API handle the authorisation 
 - The Database: Relational SQL database hosted via Supabase (postgreSQL) to store student's credentials and their game scores
 
-![High-Level-Solution Diagram]()
+![High-Level-Solution Diagram](./images/high-level-solution-diagram.jpg)
 
 ## Database Schema (ERD)
 Our Database is designed to support signup/login system and track student' score across the different games
