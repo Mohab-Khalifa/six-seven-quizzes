@@ -205,6 +205,7 @@ function closePopup() {
 }
 
 module.exports = {
+  questions,
   startGame,
   loadQuestion,
   checkAnswer,
