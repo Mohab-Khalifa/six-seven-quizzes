@@ -157,6 +157,7 @@ module.exports = {
   goToResults,
   showHint,
   retryQuestion,
+  
 };
 function showPopup(message, type){
     const popup = document.getElementById("popup");
