@@ -133,6 +133,22 @@ backdrop-filter: blur(8px);
     transition:all 0.3s ease;
 }
 
+/* ANSWER OPTION BUTTONS */
+.btn-outline-primary {
+    color: #e8d8a0;
+    border-color: #e8d8a0;
+    background: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+    background: #e8d8a0;
+    border-color: #e8d8a0;
+    color: #111;
+}
+
 /* START BUTTON */
 .btn-primary{
     background:#facc15;
