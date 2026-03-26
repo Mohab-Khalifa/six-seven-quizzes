@@ -82,12 +82,12 @@ function checkAnswer(userChoice) {
     if (userChoice === q.correct) {
         for (let i=0; i<buttons.length; i++) {
         buttons[i].disabled = true;}
-        alert("Correct! Vault security bypassed! Click 'Next' to try the next security layer")
+        showPopup("✅ Correct! Vault security bypassed! Click Next to try the next security layer");
         myScore = myScore + 1;
             console.log(myScore)
 
     if(currentQuestion === 4) {
-        alert("Congrats! You cracked the vault! The heist is a success")
+        showPopup("🎉 Congrats! You cracked the vault!");
         goToResults();
         return;
     }
@@ -97,12 +97,12 @@ function checkAnswer(userChoice) {
         strikes= strikes + 1;
 
         if (strikes >=2) {
-            alert("Busted! The correct answer was: " + q.options[q.correct] + " Moving to results ...")
+            showPopup("🚨 Busted! Correct answer: " + q.options[q.correct] +" Moving to results ...");
             goToResults(); //game stops here
             return;
 
         } else{
-        alert ("Wrong! Strike 1: Try again");
+      showPopup("❌ Wrong! Strike 1: Try again", "wrong");
         }
     }
 }
@@ -110,7 +110,7 @@ function checkAnswer(userChoice) {
 // Ending the game
 function nextQuestion() {
     if(!answered){
-        alert("you must select an answer before moving on!");
+     showPopup("⚠️ You must answer before moving on!");
         return;
     }
     // If they have 2 strikes, go to results page 
@@ -141,7 +141,7 @@ function goToResults () {
 // function to display the hint
 function showHint() {
     const q = questions[currentQuestion];
-    alert("Hint: " + q.hint)
+    showPopup("💡 Hint: " + q.hint);
 }
 
 //resets the selection for the current question
@@ -149,7 +149,6 @@ function retryQuestion() {
 
 loadQuestion();    
 }
-
 module.exports = {
   startGame,
   loadQuestion,
@@ -158,5 +157,23 @@ module.exports = {
   goToResults,
   showHint,
   retryQuestion,
-  questions
 };
+function showPopup(message, type){
+    const popup = document.getElementById("popup");
+    const box = document.querySelector(".popup-box");
+
+    document.getElementById("popupMessage").innerText = message;
+
+    // remove old styles
+    box.classList.remove("wrong");
+
+    // apply red style if wrong
+    if(type === "wrong"){
+        box.classList.add("wrong");
+    }
+
+    popup.classList.remove("hidden");
+}
+function closePopup(){
+    document.getElementById("popup").classList.add("hidden");
+}
