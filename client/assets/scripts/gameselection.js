@@ -86,6 +86,7 @@ function checkAnswer(userChoice) {
         myScore = myScore + 1;
             console.log(myScore)
 
+
     if(currentQuestion === 4) {
         showPopup("🎉 Congrats! You cracked the vault!");
         goToResults();
@@ -93,7 +94,7 @@ function checkAnswer(userChoice) {
     }
     
     }else {
-        //wronf answer: add strike
+        //wrong answer: add strike
         strikes= strikes + 1;
 
         if (strikes >=2) {
@@ -157,7 +158,6 @@ module.exports = {
   goToResults,
   showHint,
   retryQuestion,
-  
 };
 function showPopup(message, type){
     const popup = document.getElementById("popup");
