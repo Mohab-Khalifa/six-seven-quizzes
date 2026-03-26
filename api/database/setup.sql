@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS results;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS results CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
     id INT GENERATED ALWAYS AS IDENTITY,
@@ -13,5 +13,5 @@ CREATE TABLE result (
     user_id INT NOT NULL,
     score INT NOT NULL,
     PRIMARY KEY (result_id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )
