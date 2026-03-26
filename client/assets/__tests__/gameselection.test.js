@@ -6,7 +6,6 @@ const {
   goToResults, // to do
   showHint,
   retryQuestion,
-  questions
 } = require("../scripts/gameselection.js");
 
 describe("gameselection.html", () => {
@@ -136,6 +135,7 @@ describe("gameselection.html", () => {
 
     expect(strikes).toBe(1);
   });
+  
 //strike 2
   it("goes to results after 2 strikes", () => {
     strikes = 1;

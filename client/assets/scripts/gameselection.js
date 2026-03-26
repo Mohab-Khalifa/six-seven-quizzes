@@ -151,5 +151,4 @@ module.exports = {
   goToResults,
   showHint,
   retryQuestion,
-  questions
 };

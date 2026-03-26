@@ -46,8 +46,8 @@ describe("login.js", () => {
         method: "POST",
         headers: expect.any(Object),
         body: JSON.stringify({
-          username: "testUser",
-          password: "secret"
+          username: "username",
+          password: "password"
         })
       })
     );

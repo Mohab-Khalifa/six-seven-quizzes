@@ -56,4 +56,4 @@ async function loadResults() {
       "Failed to load results. Please try again.";
   }
 }
-loadResults();
+module.exports = {loadResults};
