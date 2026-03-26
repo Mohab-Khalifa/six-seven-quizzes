@@ -37,6 +37,7 @@ let currentQuestion = 0;
 let strikes = 0;
 let myScore = 0;
 let answer = false; //track if  user has answered the current qn
+let pendingResults = false;
 
 // start the game
 function startGame () {
@@ -99,7 +100,8 @@ function checkAnswer(userChoice) {
 
         if (strikes >=2) {
             showPopup("🚨 Busted! Correct answer: " + q.options[q.correct] +" Moving to results ...");
-            goToResults(); //game stops here
+            // goToResults(); //game stops here
+            pendingResults = true;
             return;
 
         } else{
@@ -177,4 +179,8 @@ function showPopup(message, type){
 }
 function closePopup(){
     document.getElementById("popup").classList.add("hidden");
+    if(pendingResults) {
+        pendingResults = false;
+        goToResults();
+    }
 }
