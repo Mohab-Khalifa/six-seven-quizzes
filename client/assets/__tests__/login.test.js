@@ -1,25 +1,39 @@
-describe("login", () =>{
- 
-  it("Exists", () => {
-    expect(login).toBeDefined();
-  })
-  
-  
+// const loginPath = require('../scripts/login.js')
 
+let dom;
+let document;
+
+describe("login", () =>{
+  beforeEach(async () =>{
+    dom = await renderDOM('login.html')
+    document = await dom.window.document;
+  })
 })
 
-  it("sends login request with correct body", async () => {
-    
+  it("When existing user inputs details and presses submit, it redirects to gameselection", async () => {
+    const loginBtn = document.getElementById("form-box .main-btn")
+    const usernameInput = document.getElementById('username')
+    const passwordInput = document.getElementById('password')
 
-  it("stores token and redirects on success", async () => {
-    
+    usernameInput.textContent = 'KenBigBen';
+    passwordInput.textContent = '123'
 
-    
+    expect(loginBtn).toBeTruthy
+    expect(usernameInput.textContent).toBe('KenBigBen')
+    expect(passwordInput.textContent).toBe('123')
 
-  it("alerts error message on failure", async () => {
-    
+    loginBtn.click()
 
-  const loginPath = require('../scripts/login.js')
+    expect(localStorage.getItem("token")).toBeTruthy
+    expect(window.location).toBe("HomePage.html")
+
+  })
+
+ 
+
+  // it("alerts error message on failure", async () => {
+  // })
+
 
 
 
