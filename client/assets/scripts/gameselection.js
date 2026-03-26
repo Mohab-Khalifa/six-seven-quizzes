@@ -83,7 +83,7 @@ function checkAnswer(userChoice) {
     if (userChoice === q.correct) {
         for (let i=0; i<buttons.length; i++) {
         buttons[i].disabled = true;}
-        showPopup("✅ Correct! Vault security bypassed! Click Next to try the next security layer");
+        showPopup("✅ Correct! Vault security bypassed! Click Next to try the next security layer","correct");
         myScore = myScore + 1;
             console.log(myScore)
 
@@ -171,13 +171,13 @@ function showPopup(message, type){
 
     document.getElementById("popupMessage").innerText = message;
 
-    // remove old styles
-    box.classList.remove("wrong");
+    // Remove old styles
+    box.classList.remove("wrong", "correct", "hint");
 
-    // apply red style if wrong
-    if(type === "wrong"){
-        box.classList.add("wrong");
-    }
+    // Apply style based on type
+    if(type === "wrong") box.classList.add("wrong");
+    else if(type === "correct") box.classList.add("correct");
+    else if(type === "hint") box.classList.add("hint");
 
     popup.classList.remove("hidden");
 }
