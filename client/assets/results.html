@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Game Results</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./Styles/resultstyle.css">
+  <script src="./scripts/script.js" defer ></script>
 </head>
 <body>
 
-  <div class="game-container">
-    <h1>Brain Bank Heist</h1>
-    <button onclick="showWin()">Simulate Win</button>
-    <button onclick="showLose()">Simulate Lose</button>
+  <div class="header">
+    <div>#Game Results</div>
+    <div><strong>Brain Bank Heist</strong></div>
+    <div>Six-Seven Quizzes</div>
   </div>
 
-  <!-- Result Modal -->
-  <div id="resultModal" class="modal hidden">
-    <div class="modal-content">
-      <h2 id="resultTitle"></h2>
-      <p id="resultScore"></p>
-      <p id="resultMessage"></p>
+  <div class="main" id="main-container">
+
+    <div class="card">
+      
+      <h1 id="result-title">Loading...</h1>
+
+      <div id="result-score">0/0</div>
+
+      <p id="result-message">
+        Please wait while we load your results...
+      </p>
 
       <div class="buttons">
-        <button onclick="playAgain()">Play Again</button>
-        <button onclick="goHome()">Return to Home</button>
+          <a href="./gameselection.html">
+            <button class="btn">Play Again</button>
+        </a>
+        <a href = "./HomePage.html">
+        <button class ="btn">Return to HomePage</button></a>
       </div>
+
     </div>
+
   </div>
 
-  <script src="script.js"></script>
+  <!-- Footer -->
+  <div class="footer"> copyright @2026 Brain Bank Heist | Six-Seven Quizzes |</div>
+  
 </body>
 </html>

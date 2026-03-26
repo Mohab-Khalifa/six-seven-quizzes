@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="heist-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/client/assets/Styles/gamestyle.css">
+    <script src="./scripts/gameselection.js" defer ></script>
+    <title> Brain Bank Heist Main Page</title>
+</head>
+
+<body id="heist-layout">
+
+<section>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="gamerules.html"> Game Rules</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+             <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="gameselection.html">Brain Bank Heist</a>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Choose any subject </a>
+            <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">History</a></li>
+             <li><a class="dropdown-item" href="#">Geography</a></li>
+             <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="welcomeText">Welcome to Six-Seven Quizzes</div>
+  </div>
+  </nav>
+  </section>
+
+  <main>   
+  <section>
+    <div class="card" style="width: 50rem; padding-top: 2rem;">
+        <div class="card-inner" id="cardInner">
+
+        <!-- FRONT -->
+        <div class="flip-card-front">
+            <p class="card-text">The city slept under the glow of the full moon, but inside the National History Archives, a different kind of excitement was brewing. This wasn’t any ordinary heist — it was a heist for knowledge.
+            <br>You are Alex Carter, a master thief with a love for history and a sharp mind. Tonight, your target is the Brain Bank Vault, a legendary repository of historical secrets, artifacts, and rare manuscripts. But this vault isn’t just locked with steel and lasers — it’s secured by layers of history-themed questions. Only the cleverest minds can bypass them. </p>
+            <a href="#" class="btn btn-primary" onclick="startGame()"> Start Game</a>
+        </div>
+        
+        <!-- BACK -->
+        <div class="flip-card-back">
+            <h3 id="question"></h3>
+
+        <div id="answer"></div> 
+
+        <div class="mt-4">
+        <button class = "btn btn-info" onclick="showHint()"> Hint </button>
+        <button class = "btn btn-success" onclick="nextQuestion()"> Next </button>
+        </div>
+    </div>
+    </div>
+  </section>
+  </main>
+
+  <footer> copyright @2026 Brain Bank Heist | Six-Seven Quizzes |</footer>
+
+</body>
+</html>

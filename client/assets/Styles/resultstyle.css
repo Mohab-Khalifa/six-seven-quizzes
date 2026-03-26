@@ -1,57 +1,89 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #1e1e2f;
-  color: white;
-  text-align: center;
-  font-family: 'Georgia', serif;
-
-  min-height: calc(100vh - 100px); 
-    background: url('/client/assets/images/img4.png') no-repeat center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center      
-
-}
-.game-container {
-  margin-top: 100px;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
-/* Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+/* Header */
+.header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: #f2f2f2;
-  color: black;
-  padding: 30px;
-  border-radius: 10px;
-  width: 350px;
-}
-
-.buttons button {
-  margin: 10px;
+  justify-content: space-between;
   padding: 10px 20px;
-  border: none;
-  background: #c94df5;
+  background: #ddd;
+  font-weight: bold;
+}
+
+/* Main Background */
+.main {
+  height: calc(100vh - 80px);
+  background: url('/client/assets/images/img5.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.win-bg {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('/client/assets/images/win.png') center/cover no-repeat;
+   
+}
+
+.lose-bg {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('/client/assets/images/lose.png') center/cover no-repeat;
+ 
+}
+/* Result Card */
+.card {
+  background: rgba(255, 255, 255, 0.65); 
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  border-radius: 12px;
+  backdrop-filter: blur(-5px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+/* Title */
+#result-title {
+  margin-bottom: 10px;
+}
+
+/* Score */
+#result-score {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Message */
+#result-message {
+  line-height: 1.6;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  background: purple;
   color: white;
-  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.buttons button:hover {
-  background: #a03ad1;
+button:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background: #ddd;
 }

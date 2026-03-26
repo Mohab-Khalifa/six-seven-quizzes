@@ -1,9 +1,7 @@
 document.getElementById("form-box").addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log(e.target.username.value);
-  const form = new FormData(e.target);
 
-  console.log(form.get("username"));
+  const form = new FormData(e.target);
 
   const options = {
     method: "POST",
@@ -18,14 +16,14 @@ document.getElementById("form-box").addEventListener("submit", async (e) => {
   };
 
   const response = await fetch(
-    "https://six-seven-quizzes.onrender.com/register",
+    "https://six-seven-quizzes.onrender.com/login",
     options,
   );
   const data = await response.json();
 
-  if (response.status == 201) {
-    alert("Registered Sucessfully!");
-    window.location.assign("login.html");
+  if (response.status == 200) {
+    localStorage.setItem("token", data.token);
+    window.location.assign("HomePage.html");
   } else {
     alert(data.error);
   }
