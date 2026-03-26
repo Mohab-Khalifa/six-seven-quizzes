@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const authenticator = require("../../../middleware/authenticator");
+const logRoutes = require("../../../middleware/logger");
 
 jest.mock("jsonwebtoken");
 
@@ -68,5 +69,22 @@ describe("authenticator middleware", () => {
         expect(mockNext).not.toHaveBeenCalled();
         expect(mockStatus).toHaveBeenCalledWith(403);
         expect(mockJson).toHaveBeenCalledWith({ err: "Missing token" });
+    });
+});
+
+describe("logRoutes middleware", () => {
+    it("should log the method and url then call next()", () => {
+        const mockReq = { method: "GET", originalUrl: "/test" };
+        const mockRes = {};
+        const mockNext = jest.fn();
+
+        jest.spyOn(console, "log").mockImplementation(() => {});
+
+        logRoutes(mockReq, mockRes, mockNext);
+
+        expect(console.log).toHaveBeenCalledWith("GET", "/test");
+        expect(mockNext).toHaveBeenCalledTimes(1);
+
+        console.log.mockRestore();
     });
 });
