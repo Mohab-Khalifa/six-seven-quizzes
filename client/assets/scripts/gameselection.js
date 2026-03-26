@@ -99,7 +99,7 @@ function checkAnswer(userChoice) {
         strikes= strikes + 1;
 
         if (strikes >=2) {
-            showPopup("🚨 Busted! Correct answer: " + q.options[q.correct] +" Moving to results ...");
+            showPopup("🚨 Busted! Correct answer: " + q.options[q.correct] + "\n Moving to results ...");
             // goToResults(); //game stops here
             pendingResults = true;
             return;
