@@ -2,13 +2,14 @@ const express = require("express");
 const cors = require("cors");
 
 const userRouter = require("./routers/userRouter");
+const logRoutes = require('./middleware/logger')
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(logRoutes);
 
-// Health check route
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
@@ -16,10 +17,8 @@ app.get("/", (req, res) => {
   });
 });
 
-// Routes
 app.use("/", userRouter);
 
-// 404 handler
 app.use((req, res) => {
   res.status(404).json({
     success: false,
