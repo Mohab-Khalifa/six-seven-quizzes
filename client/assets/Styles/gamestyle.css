@@ -133,6 +133,22 @@ backdrop-filter: blur(8px);
     transition:all 0.3s ease;
 }
 
+/* ANSWER OPTION BUTTONS */
+.btn-outline-primary {
+    color: #e8d8a0;
+    border-color: #e8d8a0;
+    background: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+    background: #e8d8a0;
+    border-color: #e8d8a0;
+    color: #111;
+}
+
 /* START BUTTON */
 .btn-primary{
     background:#facc15;
@@ -205,10 +221,8 @@ backdrop-filter: blur(8px);
     padding:25px;
     border-radius:15px;
     text-align:center;
-
-    border:2px solid #facc15;
-    box-shadow:0 0 20px #facc15;
-
+    border:2px solid #d4cc2f;
+    box-shadow:0 0 20px #d4cc2f;
     animation:pop 0.3s ease;
 }
 
@@ -222,6 +236,18 @@ backdrop-filter: blur(8px);
 }
 /* WRONG POPUP (RED) */
 .popup-box.wrong{
-    border:2px solid red;
-    box-shadow:0 0 20px red;
+    border: 2px solid red;
+    box-shadow: 0 0 20px red;
+}
+
+/* CORRECT POPUP (GREEN) */
+.popup-box.correct {
+    border: 2px solid #22c55e; /* green border */
+    box-shadow: 0 0 20px #16a34a; /* green glow */
+}
+
+/* HINT POPUP (YELLOW) */
+.popup-box.hint{
+    border: 2px solid #facc15; /* matching your btn-primary yellow */
+    box-shadow: 0 0 20px #eab308;
 }

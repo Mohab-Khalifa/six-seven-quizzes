@@ -28,3 +28,4 @@ document.getElementById("form-box").addEventListener("submit", async (e) => {
     alert(data.error);
   }
 });
+
