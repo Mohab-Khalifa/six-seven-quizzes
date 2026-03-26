@@ -50,7 +50,7 @@ async function loadResults() {
 
    scoreEl.textContent = `${score}/${total}`;
   } catch (err) {
-    console.error("Error fetching results:", err);
+  console.error("Error fetching results:", err);
 
     document.getElementById("result-title").textContent = "Error";
     document.getElementById("result-message").textContent =
