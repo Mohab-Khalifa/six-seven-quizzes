@@ -43,7 +43,7 @@ describe("loadResults", () => {
 
   it("sends correct token and score to API", async () => {
     
-
-  it("handles fetch error gracefully", async () => {
+  })
+  it("handles fetch error", async () => {
     
 });

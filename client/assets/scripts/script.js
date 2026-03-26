@@ -23,12 +23,12 @@ async function loadResults() {
     const messageEl = document.getElementById("result-message");
     const scoreEl = document.getElementById("result-score");
     const mainEl = document.getElementById("main-container");
-    
+
     const resultData = data.response;
     const score = resultData.score;
-    const total = 5; 
+    const total = 5;
     // SWITCH BASED ON RESULT
-    if (score == 5) {
+    if (score === 5) {
       titleEl.textContent = "YOU WON!";
       messageEl.innerHTML = `
         🎉You bypassed every firewall.<br>
@@ -46,8 +46,9 @@ async function loadResults() {
       mainEl.classList.add("lose-bg");
     }
 
-    // Score
-  scoreEl.textContent = `${score}/${total}`;
+    // Score 
+
+   scoreEl.textContent = `${score}/${total}`;
   } catch (err) {
     console.error("Error fetching results:", err);
 
