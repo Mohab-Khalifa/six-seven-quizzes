@@ -236,3 +236,8 @@ backdrop-filter: blur(8px);
 .hidden{
     display:none;
 }
+.popup-box.wrong{
+    border:2px solid red;
+    box-shadow:0 0 20px red;
+}
+
