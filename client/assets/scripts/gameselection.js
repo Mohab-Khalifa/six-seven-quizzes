@@ -36,7 +36,7 @@ const questions = [
 let currentQuestion = 0; 
 let strikes = 0;
 let myScore = 0;
-let answer = false; //track if  user has answered the current qn
+let answered = false; //track if  user has answered the current qn
 let pendingResults = false;
 
 // start the game
@@ -95,19 +95,23 @@ function checkAnswer(userChoice) {
     }
     
     }else {
-        //wrong answer: add strike
-        strikes= strikes + 1;
+    // wrong answer: add strike
+    strikes = strikes + 1;
 
-        if (strikes >=2) {
-            showPopup("🚨 Busted! Correct answer: " + q.options[q.correct] + "\n Moving to results ...");
-            // goToResults(); //game stops here
-            pendingResults = true;
-            return;
-
-        } else{
-      showPopup("❌ Wrong! Strike 1: Try again", "wrong");
-        }
+    if (strikes >= 2) {
+        // Second strike → show popup and set pendingResults
+        showPopup(
+            "🚨 Busted! Correct answer: " + q.options[q.correct] + "\n Moving to results ...",
+            "wrong"
+        );
+        pendingResults = true;   // marks that results should come after popup closes
+        answered = true;         // mark answered so Next button won't block
+    } else {
+        // First strike → show popup, but keep answered false
+        answered = false;  // prevents user from clicking Next
+        showPopup("❌ Wrong! Strike 1: Try again", "wrong");
     }
+}
 }
 
 // Ending the game
@@ -179,8 +183,9 @@ function showPopup(message, type){
 }
 function closePopup(){
     document.getElementById("popup").classList.add("hidden");
+
     if(pendingResults) {
-        pendingResults = false;
-        goToResults();
+        pendingResults = false;  // reset for next round
+        goToResults();           // send user to results after second strike
     }
 }
