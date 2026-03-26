@@ -1,7 +1,9 @@
-TRUNCATE goats RESTART IDENTITY;
+TRUNCATE result RESTART IDENTITY CASCADE;
+TRUNCATE users RESTART IDENTITY CASCADE;
 
-INSERT INTO goats (name, age) 
+
+INSERT INTO users (username, password) 
 VALUES 
-    ('goat 1', 1), 
-    ('goat 2', 2), 
-    ('goat 3', 3)
+    ('user1', '$2b$10$CXZQmwTZ6zmOiYbpt4CQcOA9qnoUvIR6K8Lj7W1PD9yO.zhNykTnC'), 
+    ('user2', '$2b$10$CXZQmwTZ6zmOiYbpt4CQcOA9qnoUvIR6K8Lj7W1PD9yO.zhNykTnC'), 
+    ('user3', '$2b$10$CXZQmwTZ6zmOiYbpt4CQcOA9qnoUvIR6K8Lj7W1PD9yO.zhNykTnC')

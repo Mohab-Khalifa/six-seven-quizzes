@@ -6,7 +6,8 @@
     "dev": "nodemon -L index.js",
     "start": "node index.js",
     "setup-db": "node ./database/setup.js",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "setup-test-db": "set NODE_ENV=test&& node ./database/setup.js"
   },
   "keywords": [],
   "author": "",
