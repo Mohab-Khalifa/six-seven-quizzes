@@ -1,3 +1,54 @@
+const jsdom = require('jsdom')
+
+let dom;
+let document;
+
+describe("Signup", () => {
+    beforeEach(async () =>{
+    dom = await renderDOM('signup.html')
+    document = await dom.window.document;
+  })
+
+    it("When user enters details, to be redirected to login page & details stored in database", async () => {
+
+        const signUpBtn = document.getElementById("form-box .main-btn")
+        const usernameInput = document.getElementById('username')
+        const passwordInput = document.getElementById('password')
+
+        usernameInput.textContent = 'KenBigBen';
+        passwordInput.textContent = '123'
+
+        expect(loginBtn).toBeTruthy
+        expect(usernameInput.textContent).toBe('KenBigBen')
+        expect(passwordInput.textContent).toBe('123')
+
+        signUpBtn.click()
+        
+        expect(fetch).toHaveBeenCalledWith("https://six-seven-quizzes.onrender.com/register", expect.objectContaining({
+            method: "POST",
+            headers: expect.any(Object),
+            body: JSON.stringify({
+            username: "KenBigBen",
+            password: "123" })
+      })
+    );
+  });
+
+})
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 // beforeEach(() => {
 //   document.body.innerHTML = `
 //     <form id="form-box">

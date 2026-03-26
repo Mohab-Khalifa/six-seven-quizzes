@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const jsdom = require('jsdom');
 //To use jsdom, you will primarily use the JSDOM constructor, which is a named export of the jsdom main module.
 const { JSDOM } = jsdom;
@@ -24,4 +24,4 @@ const renderDOM = async (filename) => {
   });
 };
 
-module.exports =  {renderDOM}
+module.exports = { renderDOM }
