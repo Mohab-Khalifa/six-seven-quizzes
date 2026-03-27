@@ -12,10 +12,10 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "jest": "^30.3.0",
-    "jest-environment-jsdom": "^30.3.0"
+    "jest-environment-jsdom": "^30.3.0",
+    "jsdom": "^21.1.2"
   },
   "dependencies": {
-    "jsdom": "^29.0.1"
+    "jest": "^30.3.0"
   }
 }
