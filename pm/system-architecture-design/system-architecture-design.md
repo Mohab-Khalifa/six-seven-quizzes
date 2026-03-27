@@ -24,3 +24,4 @@ Following the Hive Foundation's goal of a "well-rounded, holisitc education", ou
 - to make it simple and easy to use
 
 check our wireframes in [the wireframes folder](./wireframes)
+[trello](https://trello.com/b/3UsAbofl/educational-game-app)
