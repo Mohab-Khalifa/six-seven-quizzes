@@ -1,21 +1,28 @@
 # Six-seven quizzes Backend
+A secure RESTful API that manages user authentication and tracks game score for the Six-Seven Quizzes platforms
 
 ## system overview
+The backend acts as the secure gatekeeper for the application, handling sensitive user data and ensuring that game scores are persisted correctly to the cloud database. 
 
 ## Tech stack
+- Node.js & Express: To run the server and handle requests.
+- PostgreSQL: To store user data and game score (Hosted on Supabase)
 
 ## security and environnement
 
 The system currently has secure auth system.
 
 As the user decides to sign up, he inputs his username and a password.
-After clicking "Sign Up" button his credentials will be stored in the database, and his password will be hashed, using external library called "bcrypt".
+After clicking "Sign Up" button his credentials will be stored in the database, and his password will be hashed, using external library called "bcrypt". We use a .env file to hide important database links.
 
-# Six-Seven quizzes API
+## Main API Routes 
+- POST/api/register: Register a new user (Hashed via Bcrypt).
+- POST/api/login: Validates credentials, gives JWT token to the user and starts session.
+- POST/api/score: Sends a new score to the database using JWT token to identify the user after a Heist mission completed.
 
-## Overview
+## API Overview
 
-An API that allows you to create and update user's credentials then add the game score
+We built an API that allows you to create and update user's credentials then add the game score
 
 ## Getting Started
 
